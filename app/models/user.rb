@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :room_users
-  has_many :users, through: :room_users  #←vol.2 5.１人のユーザーには複数のチャットルームに参加できる為の記述
+  has_many :rooms, through: :room_users  #←vol.2 5.１人のユーザーには複数のチャットルームに参加できる為の記述
   has_many :messages
 
   validates :name, presence: true #
